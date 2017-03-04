@@ -69,6 +69,28 @@ function stop(){
 	robot.drive(0, 32767);
 }
 
+//React to left bumper sensor using robot.on:
+robot.on.bumpLeft = function(value) {
+  if(value == true) {
+    //BumpLeft just changed, and the new value is true!
+    backward();
+    setTimeout(right(), 1500);
+    setTimeout(forward(), 1500);
+
+  }
+};
+
+//React to right bumper sensor using robot.on:
+robot.on.bumpRight = function(value) {
+  if(value == true) {
+    //BumpRight just changed, and the new value is true!
+    backward();
+    setTimeout(left(), 1500);
+    setTimeout(forward(), 1500);
+
+  }
+};
+
 process.on('message', function(m) {
   // console.log('CHILD:robot.js got message:', m);
   // console.log("robot moving" + m['opcode']);
