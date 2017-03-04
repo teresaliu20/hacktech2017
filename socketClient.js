@@ -11,17 +11,43 @@ socket.on("message",function(message){
     console.log(message); /*converting the data into JS object */
     $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
 });
+
+// Forward
 $(function(){
-    $('#on-button').click(function(){ /*listening to the button click using Jquery listener*/
-        var data = { /*creating a Js object to be sent to the server*/ 
-            opcode:'start'              
+    $('#forwardButton').click(function(){
+        var data = {
+            opcode:'forward'              
         }
         socket.send(JSON.stringify(data)); 
-        /*Data can be sent to server very easily by using socket.send() method 
-        The data has to be changed to a JSON before sending
-                              it (JSON.stringify() does this job )*/
-        /* This triggers a message event on the server side 
-        and the event handler obtains the data sent */
+    });
+});
 
+// Backward
+$(function(){
+    $('#backwardButton').click(function(){
+        var data = {
+            opcode:'backward'              
+        }
+        socket.send(JSON.stringify(data)); 
+    });
+});
+
+// Forward left
+$(function(){
+    $('#leftButton').click(function(){
+        var data = {
+            opcode:'left'              
+        }
+        socket.send(JSON.stringify(data)); 
+    });
+});
+
+// Forward right
+$(function(){
+    $('#rightButton').click(function(){
+        var data = {
+            opcode:'right'              
+        }
+        socket.send(JSON.stringify(data)); 
     });
 });
