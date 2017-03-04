@@ -28,12 +28,12 @@ function main(r) {
       robot_setup.write(128);
       robot_setup.write(131);
       console.log("init completed");
-      setInterval(intervalFunc, 1000);
+      // setInterval(intervalFunc, 1000);
 }
 
 function forward(){
 	stop();
-	console.log("forward() triggered");
+	// console.log("forward() triggered");
 	robot.drive(20, 32767);
 }
 
