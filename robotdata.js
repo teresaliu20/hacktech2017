@@ -67,32 +67,6 @@ function analyze_data(message){
 		document.getElementById('cliffRight').style = "background-color: #69A7A9";
 		document.getElementById('cliffRight').innerHTML = "Right Cliff - not hit";
 	}
-	bumpLeft = message["data"]["data"]["bumpLeft"];
-	if(bumpLeft) {
-		document.getElementById('left-red').style.display = "initial";
-		document.getElementById('currBump').innerHTML += "Left Bumper  ";
-		document.getElementById('bumpLeft').style = "background-color: " + hitColor;
-		document.getElementById('bumpLeft').innerHTML = "Left side bumped"
-	}
-	else {
-		document.getElementById('left-red').style.display = "none";
-		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Left Bumper  ','');
-		document.getElementById('bumpLeft').style = "background-color: #69A7A9";
-		document.getElementById('bumpLeft').innerHTML = "Left Side - not bumped";
-	}
-	bumpRight = message["data"]["data"]["bumpRight"];
-	if(bumpRight) {
-		document.getElementById('right-red').style.display = "initial";
-		document.getElementById('currBump').innerHTML += "Right Bumper  ";
-		document.getElementById('bumpRight').style = "background-color: " + hitColor;
-		document.getElementById('bumpRight').innerHTML = "Right side bumped"
-	}
-	else {
-		document.getElementById('right-red').style.display = "none";
-		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
-		document.getElementById('bumpRight').style = "background-color: #69A7A9";
-		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
-	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
 	if(lightBumpCenterLeft) {
 		document.getElementById('upper-left-orange').style.display = "initial";
@@ -153,7 +127,7 @@ function analyze_data(message){
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side bumped"
 	}
 	else {
-		document.getElementById('left-red').style.display = "none";
+		document.getElementById('left-red').style = "opacity: 0";
 		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Default Left Light Bumper  ','');
 		document.getElementById('lightBumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
@@ -166,10 +140,35 @@ function analyze_data(message){
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side bumped"
 	}
 	else {
-		document.getElementById('right-red').style.display = "none";
+		document.getElementById('right-red').style = "opacity: 0";
 		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Default Right Light Bumper  ','');
 		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
+	}
+	bumpLeft = message["data"]["data"]["bumpLeft"];
+	if(bumpLeft) {
+		document.getElementById('left-red').style = "opacity: 1";
+		document.getElementById('currBump').innerHTML += "Left Bumper  ";
+		document.getElementById('bumpLeft').style = "background-color: " + hitColor;
+		document.getElementById('bumpLeft').innerHTML = "Left side bumped"
+	}
+	else {
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Left Bumper  ','');
+		document.getElementById('bumpLeft').style = "background-color: #69A7A9";
+		document.getElementById('bumpLeft').innerHTML = "Left Side - not bumped";
+	}
+	bumpRight = message["data"]["data"]["bumpRight"];
+	if(bumpRight) {
+		document.getElementById('right-red').style = "opacity: 1";
+		document.getElementById('currBump').innerHTML += "Right Bumper  ";
+		document.getElementById('bumpRight').style = "background-color: " + hitColor;
+		document.getElementById('bumpRight').innerHTML = "Right side bumped"
+	}
+	else {
+		document.getElementById('right-red').style.display = "none";
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
+		document.getElementById('bumpRight').style = "background-color: #69A7A9";
+		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
 	}
 	dropLeft = message["data"]["data"]["dropLeft"];
 	if(dropLeft) {
