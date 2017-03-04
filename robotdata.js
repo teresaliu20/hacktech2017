@@ -15,19 +15,16 @@ var hitColor = "red";
 
 
 
-// function newAngle(){
-// 	robot.onMotion = function() {
-//   		angle += robot.delta.angle;
-// 		  $('#angle').circleProgress({
-// 		    value: angle,
-// 		    size: 360,
-// 		    fill: {
-// 		      gradient: ["red", "orange"]
-// 		    }
-// 		  });
+function newAngle(){
+	  $('#angle').circleProgress({
+	    value: ((angle-90)/360),
+	    size: 80,
+	    fill: {
+	      gradient: ["red", "orange"]
+	    }
+	  });
 
-// 	}
-// }
+}
 
 function analyze_data(message){
 	// console.log("in analyze_data");
@@ -231,6 +228,8 @@ function analyze_delta_data(message){
 	  lines: { size: 7 }
 	};
 	data = [trace1];
+
+	newAngle();
 	// document.getElementById("wall").innerHTML = message["data"]['Wall'];
 	// document.getElementById("leftEncoder").innerHTML = message["data"]['encoderLeft'];
 	// document.getElementById("rightEncoder").innerHTML = message["data"]['encoderRight'];
