@@ -52,7 +52,17 @@ var e = measure/8;
 var ed = measure*3/16;
 var s = measure/16
 
-//G-G-G Eb-Bb-G  Eb-Bb-G D-D-D Eb-Bb-Gb
+
+function playSongsTest(){
+	robot.setSong(1, [[60,32], [64,32], [67,32], [60,32]]);
+	robot.setSong(2, [[72,32], [76,32], [79,32], [72,32]]);
+	robot.play(1);
+	/*Do we need delay?*/
+	robot.play(2);
+}
+
+function playSongs(){
+	//G-G-G Eb-Bb-G  Eb-Bb-G D-D-D Eb-Bb-Gb
 robot.setSong(0, [[67, q], [67, q], [67,q], 
 	[63, ed], [58, s], [67, q], 
 	[63, ed], [58, s], [67, h], 
@@ -76,14 +86,11 @@ robot.setSong(2, [[70, s], [69,s], [70, e],
 // 	[72, s], [59, e], [58, 32], [57, 32], [59,32],
 // 	[40, 32], [55, 32],
 // 	]);
-
-function playSongsTest(){
-	robot.setSong(2, [[72,32], [76,32], [79,32], [72,32]]);
-	robot.play(2);
-}
-
-function playSongs(){
 	robot.play(0);
+	/*MAY NEED TO DELAY!!!!
+
+
+	*/
 	robot.play(1);
 	robot.play(2);
 	// robot.play(3);
