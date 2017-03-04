@@ -50,6 +50,7 @@ body {
 	float: right;
 	display: inline-block;
 	position: relative;
+
 }
 
 .cliff-sensor {
@@ -57,7 +58,7 @@ body {
 	width: 20%;
 	margin: 1%;
 	display: inline-block;
-
+	height: 100px;
 }
 .wheel-sensor {
 	background-color: #69A7A9;
@@ -65,7 +66,7 @@ body {
 	margin: 1%;
 	padding-top: 15px;
 	display: inline-block;
-	height: 55px;
+	height: 100px;
 }
 .encoder-sensor {
 	background-color: #69A7A9;
@@ -73,7 +74,7 @@ body {
 	margin: 1%;
 	padding-top: 10px;
 	display: inline-block;
-	height: 60px;
+	height: 100px;
 }
 .other-sensor {
 	background-color: #69A7A9;
@@ -81,12 +82,20 @@ body {
 	margin: 1%;
 	padding-top: 10px;
 	display: inline-block;
-	height: 60px;
+	height: 100px;
+}
+#wall-sensor-inner {
+	float: left;
+	margin-left: 4%;
 }
 
+p {
+	font-size: 14px;
+}
 
 h4 {
-	margin: 0;
+
+	margin: 5px 0;
 
 }
 
@@ -118,7 +127,7 @@ h4 {
 	background-color: #69A7A9;
 	color: white;
 	text-align: center;
-	padding: 10px 10%;
+	padding: 16px 10%;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
