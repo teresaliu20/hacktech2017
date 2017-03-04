@@ -44,16 +44,17 @@ body {
 }
 
 .sensor-data {
-	height: 100%;
+	height: 60%;
 	width: 27%;
 	background-color: white;
 	float: right;
 	display: inline-block;
 }
 .sensor-inner {
+	display: none;
 	background-color: #69A7A9;
 	margin: 20px 10%;
-	padding: 20px 10%;
+	padding: 15px 10%;
 }
 
 #angle {
@@ -67,19 +68,20 @@ body {
 .controls {
 	width: 30%;
 	float: left;
-	height: 100%;
+	height: 60%;
 	display: inline-block;
 	background-color: rgba(255,255,255,0.7);
 	padding: 0 2%;
 	margin: 0 2%;
 	position: relative;
+	margin-bottom: 1%;
 }
 
 .button {
 	background-color: #69A7A9;
 	color: white;
 	text-align: center;
-	padding: 20px 10%;
+	padding: 10px 10%;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
@@ -92,13 +94,13 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background-color: #008D84;
+	background-color: #1B75BC;
 	width: 30%;
 
 }
 #left-button, #right-button {
 	border-radius: 2em;
-	background-color: #E05B04;
+	background-color: #F7941D;
 	transform: translate(-50%,-50%);
 	width: 50px;
 	top: 43%;
@@ -124,14 +126,14 @@ body {
 #backward-button {
 	border-bottom-left-radius: 5em;
 	border-bottom-right-radius: 5em;
-	top: 57%;
+	top: 56%;
 }
 #on-button {
 	border-radius: 5em;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background-color: #049019;
+	background-color: #FD600D;
 	top: 78%;
 	width: 60%;
 }
@@ -140,12 +142,10 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background-color: #D62002;
+	background-color: #ED1C24;
 	top: 90%;
 	width: 60%;
 }
-
-
 
 #forward-button:hover, #backward-button:hover,
 #left-button:hover, #right-button:hover,
@@ -153,6 +153,25 @@ body {
 	cursor: pointer;
 	background-color: black;
 	color: white;
+}
+
+.roomba-bumpers {
+	background-color: rgba(0,0,0,0.75);
+	color: white;
+	width: 63%;
+	margin-left: 2%;
+	height: 38%;
+	display: inline-block;
+	position: relative;
+}
+.roomba-image {
+	position: absolute;
+	height: 90%;
+	left: 0;
+}
+.sensors-display {
+	position: absolute;
+	right: 10%;
 }
 
 
