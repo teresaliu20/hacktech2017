@@ -14,7 +14,7 @@ var encoderLeft, encoderRight;
 
 
 
-function newAngle(){
+// function newAngle(){
 // 	robot.onMotion = function() {
 //   		angle += robot.delta.angle;
 // 		  $('#angle').circleProgress({
@@ -26,10 +26,10 @@ function newAngle(){
 // 		  });
 
 // 	}
-}
+// }
 
 function analyze_data(message){
-	console.log("in analyze_data");
+	// console.log("in analyze_data");
 	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
 	cliffLeft = message["data"]["data"]["cliffLeft"];
@@ -51,12 +51,12 @@ function analyze_data(message){
 
 
 function analyze_delta_data(message){
-	console.log(message['data']['delta']);
+	// console.log(message['data']['delta']);
 	// console.log("Encoder left: " + message["data"]['encoderLeft']);
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
 	var delta_distance = message['data']['distance'];
 	var delta_angle = message['data']['angle'];
-	var totalDistance += delta_distance;
+	totalDistance += delta_distance;
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
 		// console.log("angle : " + angle );
 		angle +=  6.25* delta_angle;
@@ -72,7 +72,6 @@ function analyze_delta_data(message){
 	  mode: 'markers',
 	  type: 'scatter',
 	  marker: { size: 5 }
-
 	};
 	data = [trace1];
 	// document.getElementById("wall").innerHTML = message["data"]['Wall'];
