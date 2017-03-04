@@ -41,6 +41,11 @@ body {
 	width: 49%;
 	height: 100%;
 	display: inline-block;
+	font-size: 30px;
+}
+
+#distance-data-inner {
+	float:left;
 }
 
 .sensor-data {
@@ -94,7 +99,7 @@ p {
 }
 
 h4 {
-
+	font-size: 20px;
 	margin: 5px 0;
 
 }
@@ -108,7 +113,7 @@ h4 {
 }
 
 .title {
-
+	font-size: 40px;
 }
 
 .controls {
@@ -121,6 +126,7 @@ h4 {
 	margin: 0 2%;
 	position: relative;
 	margin-bottom: 1%;
+	font-size: 20px;
 }
 
 .button {
@@ -219,7 +225,13 @@ h4 {
 	position: absolute;
 	right: 10%;
 	letter-spacing: 0.5px;
+	font-size: 20px;
+	margin-top: 28px;
 }
+.sensors-display p {
+	font-size: 20px;
+}
+
 .circle-key {
 	height: 10px;
 	width: 10px;

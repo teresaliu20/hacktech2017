@@ -20,8 +20,8 @@
             <div id="map"></div>
 
             <div class="map-data">
-                <div class="data-inner"><h4>Distance:</h4><p id="distance"></p></div>
-                <div class="data-inner"><h4>Angle:</h4><span id="angleNum">12</span><p id="angle"></p></div>
+                <div id="distance-data-inner" class="data-inner"><h4>Distance:</h4><p style="font-size: 40px;" id="distance"></p></div>
+                <div class="data-inner"><h4>Angle:</h4><span id="angleNum">12</span><p style="font-size: 10px;" id="angle"></p></div>
             </div>
 
         </div>
@@ -108,7 +108,7 @@
           yaxis: {
             range: [-2000, 2000]
           },
-          title:'Map'
+          title:'Tracker'
         }; 
         Plotly.newPlot('map', data, layout);
     }, 500);
