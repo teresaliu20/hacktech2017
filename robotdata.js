@@ -4,6 +4,14 @@ var y = 0;
 var x_arr = [];
 var y_arr = [];
 var data;
+var totalDistance = 0;
+var cliffFrontLeft, cliffFrontRight, cliffLeft, cliffRight;
+var bumpLeft, bumpRight, lightBumpCenterLeft, lightBumpCenterRight, lightBumpFrontLeft, lightBumpFrontRight,
+	lightBumpLeft, lightBumpRight;
+var dropLeft, dropRight;
+var wall;
+var encoderLeft, encoderRight;
+
 
 
 function newAngle(){
@@ -22,6 +30,23 @@ function newAngle(){
 
 function analyze_data(message){
 	console.log("in analyze_data");
+	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
+	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
+	cliffLeft = message["data"]["data"]["cliffLeft"];
+	cliffRight = message["data"]["data"]["cliffRight"];
+	bumpLeft = message["data"]["data"]["bumpLeft"];
+	bumpRight = message["data"]["data"]["bumpRight"];
+	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
+	lightBumpCenterRight = message["data"]["data"]["lightBumpCenterRight"];
+	lightBumpFrontLeft = message["data"]["data"]["lightBumpFrontLeft"];
+	lightBumpFrontRight = message["data"]["data"]["lightBumpFrontRight"];
+	lightBumpLeft = message["data"]["data"]["lightBumpLeft"];
+	lightBumpRight = message["data"]["data"]["lightBumpRight"];
+	dropLeft = message["data"]["data"]["dropLeft"];
+	dropRight = message["data"]["data"]["dropRight"];
+	wall = message["data"]["data"]["wall"];
+	encoderLeft = message["data"]["data"]["encoderLeft"];
+	encoderRight = message["data"]["data"]["encoderRight"];
 }
 
 
@@ -31,6 +56,7 @@ function analyze_delta_data(message){
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
 	var delta_distance = message['data']['distance'];
 	var delta_angle = message['data']['angle'];
+	var totalDistance += delta_distance;
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
 		// console.log("angle : " + angle );
 		angle +=  6.25* delta_angle;
