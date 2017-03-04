@@ -49,11 +49,45 @@ body {
 	background-color: white;
 	float: right;
 	display: inline-block;
+	position: relative;
 }
-.sensor-inner {
+
+.cliff-sensor {
 	background-color: #69A7A9;
-	margin: 20px 10%;
-	padding: 15px 10%;
+	width: 20%;
+	margin: 1%;
+	display: inline-block;
+
+}
+.wheel-sensor {
+	background-color: #69A7A9;
+	width: 44%;
+	margin: 1%;
+	padding-top: 15px;
+	display: inline-block;
+	height: 55px;
+}
+.encoder-sensor {
+	background-color: #69A7A9;
+	width: 92%;
+	margin: 1%;
+	padding-top: 10px;
+	display: inline-block;
+	height: 60px;
+}
+.other-sensor {
+	background-color: #69A7A9;
+	width: 44%;
+	margin: 1%;
+	padding-top: 10px;
+	display: inline-block;
+	height: 60px;
+}
+
+
+h4 {
+	margin: 0;
+
 }
 
 #bump-sensors {

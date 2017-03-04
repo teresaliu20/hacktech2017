@@ -20,8 +20,8 @@
             <div id="map"></div>
 
             <div class="map-data">
-                <div class="data-inner"><h2>Distance:</h2><p id="distance"></p></div>
-                <div class="data-inner"><h2>Angle:</h2><p id="angle"></p></div>
+                <div class="data-inner"><h4>Distance:</h4><p id="distance"></p></div>
+                <div class="data-inner"><h4>Angle:</h4><p id="angle"></p></div>
             </div>
 
         </div>
@@ -44,10 +44,11 @@
 
         <div class="sensor-data">
             <div id="all-cliff-sensors" class="sensor-inner">
-                <div><h2>Front Left Cliff</h2><p id="cliffFrontLeft"></p></div>
-                <div><h2>Front Right Cliff</h2><p id="cliffFrontRight"></p></div>
-                <div><h2>Left Cliff</h2><p id="cliffLeft"></p></div>
-                <div><h2>Right Cliff</h2><p id="cliffRight"></p></div>
+                <h4>Cliff Sensors:</h4>
+                <div class="cliff-sensor"><h5>&nbspSide&nbsp &nbspLeft&nbsp</h5><p id="cliffLeft"></p></div>
+                <div class="cliff-sensor"><h5>Front &nbspLeft&nbsp</h5><p id="cliffFrontLeft"></p></div>
+                <div class="cliff-sensor"><h5>Front Right</h5><p id="cliffFrontRight"></p></div>
+                <div class="cliff-sensor"><h5>Side Right</h5><p id="cliffRight"></p></div>
             </div>
             <div id="bump-sensors" class="sensor-inner">
                 <div id="bumpLeft">Left Side - not bumped</div>
@@ -60,14 +61,21 @@
                 <div id="lightBumpRight">Light Right Side - not bumped</div>
             </div>
             <div id="wheel-drop-sensors" class="sensor-inner">
-                <div><h2>Left Wheel</h2><p id="dropLeft"></p></div>
-                <div><h2>Right Wheel</h2><p id="dropRight"></p></div>
+                <h4>Wheel Sensors:</h4>
+                <div class="wheel-sensor"><h4>&nbspLeft Wheel&nbsp</h4><p id="dropLeft"></p></div>
+                <div class="wheel-sensor"><h4>Right Wheel</h4><p id="dropRight"></p></div>
             </div>
+
+            <h4>Encoder Count:</h4>
+            <div class="sensor-inner encoder-sensor">
+                <h4>Left Encoder, Right Encoder</h4><p id="encoder-counts"></p></div>
             <div id="wall-sensor" class="sensor-inner">
-                <div><h2>Wall</h2><p id="wall"></p></div>
+                <h4>Velocity and Wall Sensor:</h4>
+                <div class="sensor-inner other-sensor"><h4>Velocity<h4><p id="velocity"></p></div>
+                <div class="other-sensor"><h4>Wall</h4><p id="wall"></p></div>
             </div>
-            <div class="sensor-inner"><h2>Velocity<h2><p id="velocity"></p></div>
-            <div class="sensor-inner"><h2>Left Encoder, Right Encoder</h2><p id="encoder-counts"></p></div>
+            
+            
         </div>
 
         <div class="roomba-bumpers">
@@ -104,7 +112,7 @@
     </script>
 
         <!-- <div class="attributes">
-            <h2> Attributes </h2> 
+            <h4> Attributes </h4> 
             <h3> Distance: </h3> <span id="distance"></span>
             <h3> Angle: </h3> <span id="angle"></span>
             <h3> Cliff Sensors: </h3> <span id="distance"></span>
