@@ -41,7 +41,7 @@ function analyze_data(message){
 		document.getElementById('cliffFrontLeft').innerHTML = "Front Left Cliff - not hit";
 	}
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
-	if(cliffFrontLeft) {
+	if(cliffFrontRight) {
 		document.getElementById('cliffFrontRight').style = "background-color: " + hitColor;
 		document.getElementById('cliffFrontRight').innerHTML = "Front right cliff reached"
 	}
@@ -50,7 +50,7 @@ function analyze_data(message){
 		document.getElementById('cliffFrontRight').innerHTML = "Front Right Cliff - not hit";
 	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
-	if(cliffFrontLeft) {
+	if(cliffLeft) {
 		document.getElementById('cliffLeft').style = "background-color: " + hitColor;
 		document.getElementById('cliffLeft').innerHTML = "Left cliff reached"
 	}
@@ -59,7 +59,7 @@ function analyze_data(message){
 		document.getElementById('cliffLeft').innerHTML = "Left Cliff - not hit";
 	}
 	cliffRight = message["data"]["data"]["cliffRight"];
-	if(cliffFrontLeft) {
+	if(cliffRight) {
 		document.getElementById('cliffRight').style = "background-color: " + hitColor;
 		document.getElementById('cliffRight').innerHTML = "Right cliff reached"
 	}
@@ -86,11 +86,59 @@ function analyze_data(message){
 		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
 	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
+	if(lightBumpCenterLeft) {
+		document.getElementById('lightBumpCenterLeft').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Left Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpCenterLeft').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Left Side - not bumped";
+	}
 	lightBumpCenterRight = message["data"]["data"]["lightBumpCenterRight"];
+	if(lightBumpCenterRight) {
+		document.getElementById('lightBumpCenterLeft').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Right Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpCenterLeft').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Right Side - not bumped";
+	}
 	lightBumpFrontLeft = message["data"]["data"]["lightBumpFrontLeft"];
+	if(lightBumpFrontLeft) {
+		document.getElementById('lightBumpFrontLeft').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpFrontLeft').innerHTML = "Light Front Left Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpFrontLeft').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpFrontLeft').innerHTML = "Light Front Left Side - not bumped";
+	}
 	lightBumpFrontRight = message["data"]["data"]["lightBumpFrontRight"];
+	if(lightBumpFrontRight) {
+		document.getElementById('lightBumpFrontRight').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpFrontRight').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side - not bumped";
+	}
 	lightBumpLeft = message["data"]["data"]["lightBumpLeft"];
+	if(leftBumpLeft) {
+		document.getElementById('lightBumpLeft').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpLeft').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
+	}
 	lightBumpRight = message["data"]["data"]["lightBumpRight"];
+	if(leftBumpRight) {
+		document.getElementById('lightBumpRight').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpRight').innerHTML = "Light Right Side bumped"
+	}
+	else {
+		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
+	}
 	dropLeft = message["data"]["data"]["dropLeft"];
 	dropRight = message["data"]["data"]["dropRight"];
 	wall = message["data"]["data"]["wall"];
