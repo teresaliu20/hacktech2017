@@ -78,7 +78,7 @@ function stop(){
 
 
 
-robot = create.open(ps_item, autonomous);
+// robot = create.open(ps_item, autonomous);
 
 
 process.on('message', function(m) {
