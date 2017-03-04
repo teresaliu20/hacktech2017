@@ -46,38 +46,38 @@ function analyze_data(message){
 	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
 	if(cliffFrontLeft) {
 		document.getElementById('cliffFrontLeft').style = "background-color: " + hitColor;
-		document.getElementById('cliffFrontLeft').innerHTML = "Front left cliff reached"
+		document.getElementById('cliffFrontLeft').innerHTML = "HIT"
 	}
 	else {
 		document.getElementById('cliffFrontLeft').style = "background-color: #69A7A9";
-		document.getElementById('cliffFrontLeft').innerHTML = "Front Left Cliff - not hit";
+		document.getElementById('cliffFrontLeft').innerHTML = "";
 	}
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
 	if(cliffFrontRight) {
 		document.getElementById('cliffFrontRight').style = "background-color: " + hitColor;
-		document.getElementById('cliffFrontRight').innerHTML = "Front right cliff reached"
+		document.getElementById('cliffFrontRight').innerHTML = "HIT"
 	}
 	else {
 		document.getElementById('cliffFrontRight').style = "background-color: #69A7A9";
-		document.getElementById('cliffFrontRight').innerHTML = "Front Right Cliff - not hit";
+		document.getElementById('cliffFrontRight').innerHTML = "";
 	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
 	if(cliffLeft) {
 		document.getElementById('cliffLeft').style = "background-color: " + hitColor;
-		document.getElementById('cliffLeft').innerHTML = "Left cliff reached"
+		document.getElementById('cliffLeft').innerHTML = "HIT"
 	}
 	else {
 		document.getElementById('cliffLeft').style = "background-color: #69A7A9";
-		document.getElementById('cliffLeft').innerHTML = "Left Cliff - not hit";
+		document.getElementById('cliffLeft').innerHTML = "";
 	}
 	cliffRight = message["data"]["data"]["cliffRight"];
 	if(cliffRight) {
 		document.getElementById('cliffRight').style = "background-color: " + hitColor;
-		document.getElementById('cliffRight').innerHTML = "Right cliff reached"
+		document.getElementById('cliffRight').innerHTML = "HIT"
 	}
 	else {
 		document.getElementById('cliffRight').style = "background-color: #69A7A9";
-		document.getElementById('cliffRight').innerHTML = "Right Cliff - not hit";
+		document.getElementById('cliffRight').innerHTML = "";
 	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
 	if(lightBumpCenterLeft) {
@@ -184,34 +184,33 @@ function analyze_data(message){
 	dropLeft = message["data"]["data"]["dropLeft"];
 	if(dropLeft) {
 		document.getElementById('dropLeft').style = "background-color: " + hitColor;
-		document.getElementById('dropLeft').innerHTML = "Left Wheel - dropped"
+		document.getElementById('dropLeft').innerHTML = "DROPPED"
 	}
 	else {
 		document.getElementById('dropLeft').style = "background-color: #69A7A9";
-		document.getElementById('dropLeft').innerHTML = "Left Wheel - not dropped";
+		document.getElementById('dropLeft').innerHTML = "";
 	}
 	dropRight = message["data"]["data"]["dropRight"];
 	if(dropRight) {
 		document.getElementById('dropRight').style = "background-color: " + hitColor;
-		document.getElementById('dropRight').innerHTML = "Right Wheel - dropped"
+		document.getElementById('dropRight').innerHTML = "DROPPED"
 	}
 	else {
 		document.getElementById('dropRight').style = "background-color: #69A7A9";
-		document.getElementById('dropRight').innerHTML = "Right Wheel - not dropped";
+		document.getElementById('dropRight').innerHTML = "";
 	}
 	wall = message["data"]["data"]["wall"];
 	if(wall) {
 		document.getElementById('wall').style = "background-color: " + hitColor;
-		document.getElementById('wall').innerHTML = "Wall - found"
+		document.getElementById('wall').innerHTML = "FOUND";
 	}
 	else {
 		document.getElementById('wall').style = "background-color: #69A7A9";
-		document.getElementById('wall').innerHTML = "Wall - not found";
+		document.getElementById('wall').innerHTML = "";
 	}
 	encoderLeft = message["data"]["data"]["encoderLeft"];
 	encoderRight = message["data"]["data"]["encoderRight"];
-	document.getElementById('encoder-counts').innerHTML = "Left Encoder Count: " + encoderLeft + '\n' + 
-		"Right Encoder Count: " + encoderRight;
+	document.getElementById('encoder-counts').innerHTML = encoderLeft + ', ' + encoderRight;
 }
 
 
@@ -223,6 +222,7 @@ function analyze_delta_data(message){
 	var delta_angle = message['data']['delta']['angle'];
 	totalDistance += Math.abs(delta_distance);
 	document.getElementById('distance').innerHTML = totalDistance;
+	document.getElementById('velocity').innerHTML = delta_distance / 0.5 + " mm/s";
 	// document.getElementById('angle').innerHTML = angle;
 	// console.log("angle : " + angle );
 

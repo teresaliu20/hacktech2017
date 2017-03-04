@@ -51,10 +51,13 @@ body {
 	display: inline-block;
 }
 .sensor-inner {
-	display: none;
 	background-color: #69A7A9;
 	margin: 20px 10%;
 	padding: 15px 10%;
+}
+
+#bump-sensors {
+	display: none;
 }
 
 #angle {
