@@ -1,5 +1,6 @@
 var create = require('create2');
 var chalk = require('chalk');
+var S = require('s');
 
 var robot;
 var robot_setup;
@@ -8,10 +9,18 @@ var input = 1;
 function init() {
 	create.debug = false; //Data will be logged to terminal.
 	create.inputMode = 1; //Only relevant when debug is on.
-	create.prompt(function(p){
-		// process.send({ "p": p });
-		robot = create.open(p,main);
-	});
+  create.ports(function(ps){
+    for (var i = ps.length - 1; i >= 0; i--) {
+      var name = ps[i]['comName'];
+      if(S(name).includes('usbserial')){
+        robot = create.open(name,main);
+        console.log("connected to "+ name);
+        break;
+      }else if(i == ps.length -1){
+        console.log("no device found");
+      }
+    };
+  });
 }
 
 // robot = create.open(port, callback=null)
