@@ -1,4 +1,4 @@
-var angle = 0;
+var angle = 90;
 var x = 0;
 var y = 0;
 var x_arr = [];
@@ -177,12 +177,14 @@ function analyze_delta_data(message){
 	// console.log(message['data']['delta']);
 	// console.log("Encoder left: " + message["data"]['encoderLeft']);
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
-	var delta_distance = message['data']['distance'];
-	var delta_angle = message['data']['angle'];
+	var delta_distance = message['data']['delta']['distance'];
+	var delta_angle = message['data']['delta']['angle'];
 	totalDistance += delta_distance;
+	// console.log("angle : " + angle );
+
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
-		// console.log("angle : " + angle );
-		angle +=  6.25* delta_angle;
+		console.log("angle : " + angle );
+		angle +=  1.263 *delta_angle;
 		x += delta_distance * Math.cos(angle * (Math.PI / 180));
 		y += delta_distance * Math.sin(angle * (Math.PI / 180));
 		// console.log("x: " + x + " y: " + y);
@@ -192,9 +194,9 @@ function analyze_delta_data(message){
 	var trace1 = {
 	  x:x_arr,
 	  y:y_arr,
-	  mode: 'markers',
+	  mode: 'lines',
 	  type: 'scatter',
-	  marker: { size: 5 }
+	  lines: { size: 7 }
 	};
 	data = [trace1];
 	// document.getElementById("wall").innerHTML = message["data"]['Wall'];

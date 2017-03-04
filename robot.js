@@ -46,46 +46,46 @@ function main(r) {
       robot_setup.write(128);
       robot_setup.write(131);
       console.log("init completed");
-      setInterval(intervalFunc, 500);
+      setInterval(intervalFunc, 100);
       // robot = r;
 }
 
-// function autonomous(){
-//   // create.ports(function(ports){
-//   //   for (var i = ps.length - 1; i >= 0; i--) {
-//   //     var name = ps[i]['comName'];
-//   //     if(S(name).includes('usbserial')){
-//   //       robot = create.open(name,main);
+function autonomous(){
+  // create.ports(function(ports){
+  //   for (var i = ps.length - 1; i >= 0; i--) {
+  //     var name = ps[i]['comName'];
+  //     if(S(name).includes('usbserial')){
+  //       robot = create.open(name,main);
 
-//   //       console.log("connected to "+ name);
-//   //       break;
-//   //     }else if(i == ps.length -1){
-//   //       console.log("no device found");
-//   //     }
-//   //   };
-//   // });
-//   forward();
+  //       console.log("connected to "+ name);
+  //       break;
+  //     }else if(i == ps.length -1){
+  //       console.log("no device found");
+  //     }
+  //   };
+  // });
+  forward();
 
-//   //React to left bumper sensor using robot.on:
-//   robot.on.bumpLeft = function(value) {
-//     if(value == true) {
-//       //BumpLeft just changed, and the new value is true!
-//       backward();
-//       setTimeout(right(), 500);
-//       setTimeout(forward(), 1000);
-//     }
-//   };
+  //React to left bumper sensor using robot.on:
+  robot.on.bumpLeft = function(value) {
+    if(value == true) {
+      //BumpLeft just changed, and the new value is true!
+      backward();
+      setTimeout(right(), 500);
+      setTimeout(forward(), 1000);
+    }
+  };
 
-//   //React to right bumper sensor using robot.on:
-//   robot.on.bumpRight = function(value) {
-//     if(value == true) {
-//       //BumpRight just changed, and the new value is true!
-//       backward();
-//       setTimeout(left(), 500);
-//       setTimeout(forward(), 1000);
-//     }
-//   };
-// }
+  //React to right bumper sensor using robot.on:
+  robot.on.bumpRight = function(value) {
+    if(value == true) {
+      //BumpRight just changed, and the new value is true!
+      backward();
+      setTimeout(left(), 500);
+      setTimeout(forward(), 1000);
+    }
+  };
+}
 
 // console.log(robot);
 
