@@ -72,13 +72,13 @@ body {
 	background-color: rgba(255,255,255,0.7);
 	padding: 0 2%;
 	margin: 0 2%;
+	position: relative;
 }
 
 .button {
 	background-color: #69A7A9;
 	color: white;
 	text-align: center;
-	margin: 10px 10%;
 	padding: 20px 10%;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -87,9 +87,72 @@ body {
 	transition: all 0.4s ease-in-out;
 }
 
+#forward-button, #backward-button {
+	border-radius: 1em;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #008D84;
+	width: 30%;
+
+}
+#left-button, #right-button {
+	border-radius: 2em;
+	background-color: #E05B04;
+	transform: translate(-50%,-50%);
+	width: 50px;
+	top: 43%;
+	position: absolute;
+
+}
+#left-button {
+	border-top-left-radius: 5em;
+	border-bottom-left-radius: 5em;
+	left: 30%;
+}
+#right-button {
+	border-top-right-radius: 5em;
+	border-bottom-right-radius: 5em;
+	position: absolute;
+	left: 70%;
+}
+#forward-button {
+	border-top-left-radius: 5em;
+	border-top-right-radius: 5em;
+	top: 30%;
+}
+#backward-button {
+	border-bottom-left-radius: 5em;
+	border-bottom-right-radius: 5em;
+	top: 57%;
+}
+#on-button {
+	border-radius: 5em;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #049019;
+	top: 78%;
+	width: 60%;
+}
+#off-button {
+	border-radius: 5em;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #D62002;
+	top: 90%;
+	width: 60%;
+}
 
 
-.button:hover {
+
+#forward-button:hover, #backward-button:hover,
+#left-button:hover, #right-button:hover,
+#off-button:hover, #on-button:hover {
+	cursor: pointer;
 	background-color: black;
 	color: white;
 }
+
+
