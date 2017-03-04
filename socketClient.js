@@ -13,8 +13,13 @@ socket.on("message",function(message){
         console.log(message); /*converting the data into JS object */
         $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
     }else{
-        analyzeData(message);
-        newAngle();
+        // console.log(message);
+
+        if (! (typeof message['data']['delta'] === "undefined") ) {
+            analyze_delta_data(message);
+        }else{
+            analyze_data(message);
+        }
     };
 });
 

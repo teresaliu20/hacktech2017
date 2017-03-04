@@ -20,9 +20,13 @@ function newAngle(){
 // 	}
 }
 
-function analyzeData(message){
+function analyze_data(message){
+	console.log("in analyze_data");
+}
 
-	// console.log(message);
+
+function analyze_delta_data(message){
+	console.log(message['data']['delta']);
 	// console.log("Encoder left: " + message["data"]['encoderLeft']);
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
 	var delta_distance = message['data']['distance'];

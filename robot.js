@@ -31,8 +31,8 @@ function init() {
 function intervalFunc () {
   // console.log(robot.data);
   // process.send(JSON.stringify(robot.data));
-  // console.log(robot.delta);
-  process.send(JSON.stringify(robot.delta));
+  process.send(JSON.stringify({ 'delta': robot.delta}));
+  process.send(JSON.stringify({ 'data' : robot.data}));
 }
 
 
