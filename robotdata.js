@@ -33,7 +33,10 @@ function analyze_data(message){
 	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
 	if(cliffFrontLeft || cliffFrontLeft || cliffLeft || cliffRight) {
-		document.getElementById('all-cliff-sensors').style = "background-color: pink";
+		document.getElementById('all-cliff-sensors').style = "background-color: red";
+	}
+	else {
+		document.getElementById('all-cliff-sensors').style = "background-color: green";
 	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
 	cliffRight = message["data"]["data"]["cliffRight"];
