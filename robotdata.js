@@ -69,73 +69,105 @@ function analyze_data(message){
 	}
 	bumpLeft = message["data"]["data"]["bumpLeft"];
 	if(bumpLeft) {
+		document.getElementById('left-red').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Left Bumper  ";
 		document.getElementById('bumpLeft').style = "background-color: " + hitColor;
 		document.getElementById('bumpLeft').innerHTML = "Left side bumped"
 	}
 	else {
+		document.getElementById('left-red').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Left Bumper  ','');
 		document.getElementById('bumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('bumpLeft').innerHTML = "Left Side - not bumped";
 	}
 	bumpRight = message["data"]["data"]["bumpRight"];
 	if(bumpRight) {
+		document.getElementById('right-red').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Right Bumper  ";
 		document.getElementById('bumpRight').style = "background-color: " + hitColor;
 		document.getElementById('bumpRight').innerHTML = "Right side bumped"
 	}
 	else {
+		document.getElementById('right-red').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
 		document.getElementById('bumpRight').style = "background-color: #69A7A9";
 		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
 	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
 	if(lightBumpCenterLeft) {
+		document.getElementById('upper-left-orange').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Center Left Light Bumper  ";
 		document.getElementById('lightBumpCenterLeft').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Left Side bumped"
 	}
 	else {
+		document.getElementById('upper-left-orange').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Center Left Light Bumper  ','');
 		document.getElementById('lightBumpCenterLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Left Side - not bumped";
 	}
 	lightBumpCenterRight = message["data"]["data"]["lightBumpCenterRight"];
 	if(lightBumpCenterRight) {
+		document.getElementById('upper-right-orange').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Center Right Light Bumper  ";
 		document.getElementById('lightBumpCenterRight').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpCenterRight').innerHTML = "Light Center Right Side bumped"
 	}
 	else {
+		document.getElementById('upper-right-orange').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Center Right Light Bumper  ','');
 		document.getElementById('lightBumpCenterRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpCenterRight').innerHTML = "Light Center Right Side - not bumped";
 	}
 	lightBumpFrontLeft = message["data"]["data"]["lightBumpFrontLeft"];
 	if(lightBumpFrontLeft) {
+		document.getElementById('lower-left-orange').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Front Left Light Bumper  ";
 		document.getElementById('lightBumpFrontLeft').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpFrontLeft').innerHTML = "Light Front Left Side bumped"
 	}
 	else {
+		document.getElementById('lower-left-orange').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Front Left Light Bumper  ','');
 		document.getElementById('lightBumpFrontLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpFrontLeft').innerHTML = "Light Front Left Side - not bumped";
 	}
 	lightBumpFrontRight = message["data"]["data"]["lightBumpFrontRight"];
 	if(lightBumpFrontRight) {
+		document.getElementById('lower-right-orange').style.display = "default";
+		document.getElementById('currBump').innerHTML += "Front Right Light Bumper  ";
 		document.getElementById('lightBumpFrontRight').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side bumped"
 	}
 	else {
+		document.getElementById('lower-right-orange').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Front Right Light Bumper  ','');
 		document.getElementById('lightBumpFrontRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side - not bumped";
 	}
 	lightBumpLeft = message["data"]["data"]["lightBumpLeft"];
 	if(lightBumpLeft) {
+		document.getElementById('left-red').style = "opacity: 0.5";
+		document.getElementById('currBump').innerHTML += "Left Light Bumper  ";
 		document.getElementById('lightBumpLeft').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side bumped"
 	}
 	else {
+		document.getElementById('left-red').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Left Light Bumper  ','');
 		document.getElementById('lightBumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
 	}
 	lightBumpRight = message["data"]["data"]["lightBumpRight"];
 	if(lightBumpRight) {
+		document.getElementById('right-red').style = "opacity: 0.5";
+		document.getElementById('currBump').innerHTML += "Right Light Bumper  ";
 		document.getElementById('lightBumpRight').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side bumped"
 	}
 	else {
+		document.getElementById('right-red').style.display = "none";
+		document.getElementById('currBump').innerHTML.replace('Right Light Bumper  ','');
 		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
 	}
