@@ -211,6 +211,7 @@ function analyze_delta_data(message){
 	var delta_angle = message['data']['delta']['angle'];
 	totalDistance += Math.abs(delta_distance);
 	document.getElementById('distance').innerHTML = totalDistance;
+	document.getElementById('angle').innerHTML = angle;
 	// console.log("angle : " + angle );
 
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
