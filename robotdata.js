@@ -11,6 +11,7 @@ var bumpLeft, bumpRight, lightBumpCenterLeft, lightBumpCenterRight, lightBumpFro
 var dropLeft, dropRight;
 var wall;
 var encoderLeft, encoderRight;
+var hitColor = "red";
 
 
 
@@ -31,18 +32,59 @@ var encoderLeft, encoderRight;
 function analyze_data(message){
 	// console.log("in analyze_data");
 	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
-	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
-	if(cliffFrontLeft || cliffFrontLeft || cliffLeft || cliffRight) {
-		document.getElementById('all-cliff-sensors').style = "background-color: red";
-		socket.send(JSON.stringify({'opcode':'stop'})); 
+	if(cliffFrontLeft) {
+		document.getElementById('cliffFrontLeft').style = "background-color: " + hitColor;
+		document.getElementById('cliffFrontLeft').innerHTML = "Front left cliff reached"
 	}
 	else {
-		document.getElementById('all-cliff-sensors').style = "background-color: green";
+		document.getElementById('cliffFrontLeft').style = "background-color: #69A7A9";
+		document.getElementById('cliffFrontLeft').innerHTML = "Front Left Cliff - not hit";
+	}
+	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
+	if(cliffFrontLeft) {
+		document.getElementById('cliffFrontRight').style = "background-color: " + hitColor;
+		document.getElementById('cliffFrontRight').innerHTML = "Front right cliff reached"
+	}
+	else {
+		document.getElementById('cliffFrontRight').style = "background-color: #69A7A9";
+		document.getElementById('cliffFrontRight').innerHTML = "Front Right Cliff - not hit";
 	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
+	if(cliffFrontLeft) {
+		document.getElementById('cliffLeft').style = "background-color: " + hitColor;
+		document.getElementById('cliffLeft').innerHTML = "Left cliff reached"
+	}
+	else {
+		document.getElementById('cliffLeft').style = "background-color: #69A7A9";
+		document.getElementById('cliffLeft').innerHTML = "Left Cliff - not hit";
+	}
 	cliffRight = message["data"]["data"]["cliffRight"];
+	if(cliffFrontLeft) {
+		document.getElementById('cliffRight').style = "background-color: " + hitColor;
+		document.getElementById('cliffRight').innerHTML = "Right cliff reached"
+	}
+	else {
+		document.getElementById('cliffRight').style = "background-color: #69A7A9";
+		document.getElementById('cliffRight').innerHTML = "Right Cliff - not hit";
+	}
 	bumpLeft = message["data"]["data"]["bumpLeft"];
+	if(bumpLeft) {
+		document.getElementById('bumpLeft').style = "background-color: " + hitColor;
+		document.getElementById('bumpLeft').innerHTML = "Left side bumped"
+	}
+	else {
+		document.getElementById('bumpLeft').style = "background-color: #69A7A9";
+		document.getElementById('bumpLeft').innerHTML = "Left Side - not bumped";
+	}
 	bumpRight = message["data"]["data"]["bumpRight"];
+	if(bumpRight) {
+		document.getElementById('bumpRight').style = "background-color: " + hitColor;
+		document.getElementById('bumpRight').innerHTML = "Right side bumped"
+	}
+	else {
+		document.getElementById('bumpRight').style = "background-color: #69A7A9";
+		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
+	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
 	lightBumpCenterRight = message["data"]["data"]["lightBumpCenterRight"];
 	lightBumpFrontLeft = message["data"]["data"]["lightBumpFrontLeft"];
