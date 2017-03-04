@@ -96,12 +96,12 @@ function analyze_data(message){
 	}
 	lightBumpCenterRight = message["data"]["data"]["lightBumpCenterRight"];
 	if(lightBumpCenterRight) {
-		document.getElementById('lightBumpCenterLeft').style = "background-color: " + hitColor;
-		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Right Side bumped"
+		document.getElementById('lightBumpCenterRight').style = "background-color: " + hitColor;
+		document.getElementById('lightBumpCenterRight').innerHTML = "Light Center Right Side bumped"
 	}
 	else {
-		document.getElementById('lightBumpCenterLeft').style = "background-color: #69A7A9";
-		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Right Side - not bumped";
+		document.getElementById('lightBumpCenterRight').style = "background-color: #69A7A9";
+		document.getElementById('lightBumpCenterRight').innerHTML = "Light Center Right Side - not bumped";
 	}
 	lightBumpFrontLeft = message["data"]["data"]["lightBumpFrontLeft"];
 	if(lightBumpFrontLeft) {
