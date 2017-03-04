@@ -32,6 +32,9 @@ function analyze_data(message){
 	// console.log("in analyze_data");
 	cliffFrontLeft = message["data"]["data"]["cliffFrontLeft"];
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
+	if(cliffFrontLeft || cliffFrontLeft || cliffLeft || cliffRight) {
+		document.getElementById('all-cliff-sensors').style = "background-color: pink";
+	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
 	cliffRight = message["data"]["data"]["cliffRight"];
 	bumpLeft = message["data"]["data"]["bumpLeft"];
@@ -47,7 +50,8 @@ function analyze_data(message){
 	wall = message["data"]["data"]["wall"];
 	encoderLeft = message["data"]["data"]["encoderLeft"];
 	encoderRight = message["data"]["data"]["encoderRight"];
-	document.getElementById('encoder-counts').innerHTML = encoderLeft + ", " + encoderRight;
+	document.getElementById('encoder-counts').innerHTML = "Left Encoder Count: " + encoderLeft + '\n' + 
+		"Right Encoder Count: " + encoderRight;
 }
 
 
