@@ -17,7 +17,7 @@ var hitColor = "red";
 
 function newAngle(){
 	  $('#angle').circleProgress({
-	    value: ((angle-90)/360),
+	    value: ((Math.abs(angle-90)%360)/360),
 	    size: 80,
 	    fill: {
 	      gradient: ["red", "orange"]
