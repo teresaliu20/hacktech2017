@@ -5,6 +5,27 @@ var create = require('create2');
 var chalk = require('chalk');
  
 
+var opcode = "";
+
+
+var ls = process.exec('node worker.js '+i, function (error, stdout, stderr) {
+   if (error) {
+     console.log(error.stack);
+     console.log('Error code: '+error.code);
+     console.log('Signal received: '+error.signal);
+   }
+   console.log('stdout: ' + stdout);
+   console.log('stderr: ' + stderr);
+   
+ });
+
+ ls.on('exit', function (code) {
+   console.log('Child process exited with exit code '+code);
+ });
+
+ 
+
+
 // Server-side communication with Client-side
 var app = express();
 app.use(express.static('./'));
@@ -34,8 +55,11 @@ io.sockets.on("connection",function(socket){
         data:"Server Received the message"
       }
 
-      data
-
+      if (data["opcode"] == "start") {
+        opcode = data["opcode"];
+        starting = true;
+        init();
+      };
 
       socket.send(JSON.stringify(ack_to_client));
         /*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
@@ -47,20 +71,24 @@ io.sockets.on("connection",function(socket){
 
 var robot, input = 1;
 
-function start() {
+function init() {
 	create.debug = false; //Data will be logged to terminal.
 	create.inputMode = 1; //Only relevant when debug is on.
 	create.prompt(function(p){create.open(p,main)});
 }
 
+
 //Main Program:
 function main(r) {
-	robot = r; 
-	robot.write(128);
-	robot.write(135);
+
+      robot = r; 
+      robot.write(128);
+      robot.write(135);
+
 
 }
 
-start();
+
+
 
 
