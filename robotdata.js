@@ -165,7 +165,6 @@ function analyze_data(message){
 		document.getElementById('bumpRight').innerHTML = "Right side bumped"
 	}
 	else {
-		document.getElementById('right-red').style.display = "none";
 		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
 		document.getElementById('bumpRight').style = "background-color: #69A7A9";
 		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
