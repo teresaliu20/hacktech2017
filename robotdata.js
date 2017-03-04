@@ -223,7 +223,7 @@ function analyze_delta_data(message){
 	totalDistance += Math.abs(delta_distance);
 	document.getElementById('distance').innerHTML = totalDistance;
 	document.getElementById('velocity').innerHTML = delta_distance / 0.5 + " mm/s";
-	document.getElementById('angleNum').innerHTML = Math.floor((angle - 90) % 360);
+	document.getElementById('angleNum').innerHTML = Math.floor(parseFloat((angle - 90) % 360));
 	// console.log("angle : " + angle );
 
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
