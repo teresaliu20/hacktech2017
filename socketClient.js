@@ -8,8 +8,12 @@ socket.on("message",function(message){
     */
     console.log("Message from the server arrived")
     message = JSON.parse(message);
-    console.log(message); /*converting the data into JS object */
-    $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
+    if (message['data'] == "Connection with the server established") {
+        console.log(message); /*converting the data into JS object */
+        $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
+    }else{
+        analyzeData(message);
+    };
 });
 
 // Forward
