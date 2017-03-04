@@ -10,6 +10,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	cursor: default;
 }
 
 
@@ -78,4 +79,5 @@ body {
 #left-button:hover, #right-button:hover {
 	background-color: black;
 	color: white;
+	cursor: pointer;
 }
