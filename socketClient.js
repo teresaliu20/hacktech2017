@@ -14,7 +14,7 @@ socket.on("message",function(message){
 
 // Forward
 $(function(){
-    $('#forward-button').click(function(){
+    $('#forward-button').mousedown(function(){
         var data = {
             opcode:'forward'              
         }
@@ -24,7 +24,7 @@ $(function(){
 
 // Backward
 $(function(){
-    $('#backward-button').click(function(){
+    $('#backward-button').mousedown(function(){
         var data = {
             opcode:'backward'              
         }
@@ -34,7 +34,7 @@ $(function(){
 
 // Forward left
 $(function(){
-    $('#left-button').click(function(){
+    $('#left-button').mousedown(function(){
         var data = {
             opcode:'left'              
         }
@@ -44,7 +44,7 @@ $(function(){
 
 // Forward right
 $(function(){
-    $('#right-button').click(function(){
+    $('#right-button').mousedown(function(){
         var data = {
             opcode:'right'              
         }
