@@ -13,12 +13,49 @@ body {
 }
 
 .main {
-	position: absolute;
-	top: 45%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: rgba(255,255,255,0.7);
-	padding: 20px;
+	height: 96vh;
+	width: 96vw;
+	margin: 2vh auto;
+}
+
+
+.map-box {
+	display: inline-block;
+	float:left;
+	height: 100%;
+	width: 35%;
+}
+
+#map {
+	height: 80%;
+	margin-bottom: 2%;
+}
+
+.map-data {
+	height: 19%;
+}
+
+.data-inner {
+	background-color: white;
+	width: 49%;
+	height: 100%;
+	display: inline-block;
+}
+
+.sensor-data {
+	height: 100%;
+	width: 27%;
+	background-color: white;
+	float: right;
+	display: inline-block;
+}
+.sensor-inner {
+	background-color: #69A7A9;
+	margin: 20px 10%;
+	padding: 20px 10%;
+}
+
+#angle {
 	
 }
 
@@ -26,24 +63,27 @@ body {
 
 }
 
+.controls {
+	width: 30%;
+	float: left;
+	height: 100%;
+	display: inline-block;
+	background-color: rgba(255,255,255,0.7);
+	padding: 0 2%;
+	margin: 0 2%;
+}
+
 .button {
+	background-color: #69A7A9;
 	color: white;
 	text-align: center;
-	margin: 20px;
-	padding: 10px;
-	width: 200px;
+	margin: 20px 10%;
+	padding: 20px 10%;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
-}
-#on-button {
-	background-color: #E26C0B;
-}
-
-#off-button {
-	background-color: #69A7A9;
 }
 
 #on-button:hover, #off-button:hover {

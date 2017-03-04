@@ -13,9 +13,20 @@
     </head>
     <body>
         
-
-
         <div class="main">
+    
+        <div class="map-box">
+
+            <div id="map"></div>
+
+            <div class="map-data">
+                <div id="distance" class="data-inner">Distance:</div>
+                <div id="angle" class="data-inner">Angle:</div>
+            </div>
+
+        </div>
+
+        <div class="controls">
 
             <h1 class="title">Roomba Remote</h1>
     
@@ -31,7 +42,16 @@
     
         </div>
 
-        <div id="myDiv" style="width: 480px; height: 400px;"> </div>
+        <div class="sensor-data">
+            <div id="all-cliff-sensors" class="sensor-inner">Cliff Sensors:</div>
+            <div id="bump-sensors" class="sensor-inner">Bump Sensors:</div>
+            <div id="wheel-drop-sensors" class="sensor-inner">Bump Sensors:</div>
+            <div id="velocity" class="sensor-inner">Velocity</div>
+            <div id="encoder-counts" class="sensor-inner">Encoder</div>
+        </div>
+
+
+        </div>
 
     <script type="text/javascript">
     setInterval(function(){        
@@ -44,7 +64,7 @@
           },
           title:'Map'
         }; 
-        Plotly.newPlot('myDiv', data, layout);
+        Plotly.newPlot('map', data, layout);
     }, 600);
 
 
