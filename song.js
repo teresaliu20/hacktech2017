@@ -77,6 +77,11 @@ robot.setSong(2, [[58, s], [57,s], [58, e],
 // 	[40, 32], [55, 32],
 // 	]);
 
+function playSongsTest(){
+	robot.setSong(2, [[72,32], [76,32], [79,32], [72,32]]);
+	robot.play(2);
+}
+
 function playSongs(){
 	robot.play(0);
 	robot.play(1);
