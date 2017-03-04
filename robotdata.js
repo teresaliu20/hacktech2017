@@ -76,7 +76,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('left-red').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Left Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Left Bumper  ','');
 		document.getElementById('bumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('bumpLeft').innerHTML = "Left Side - not bumped";
 	}
@@ -89,7 +89,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('right-red').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Bumper  ','');
 		document.getElementById('bumpRight').style = "background-color: #69A7A9";
 		document.getElementById('bumpRight').innerHTML = "Right Side - not bumped";
 	}
@@ -102,7 +102,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('upper-left-orange').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Center Left Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Center Left Light Bumper  ','');
 		document.getElementById('lightBumpCenterLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpCenterLeft').innerHTML = "Light Center Left Side - not bumped";
 	}
@@ -115,7 +115,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('upper-right-orange').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Center Right Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Center Right Light Bumper  ','');
 		document.getElementById('lightBumpCenterRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpCenterRight').innerHTML = "Light Center Right Side - not bumped";
 	}
@@ -128,7 +128,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('lower-left-orange').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Front Left Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Front Left Light Bumper  ','');
 		document.getElementById('lightBumpFrontLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpFrontLeft').innerHTML = "Light Front Left Side - not bumped";
 	}
@@ -141,7 +141,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('lower-right-orange').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Front Right Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Front Right Light Bumper  ','');
 		document.getElementById('lightBumpFrontRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side - not bumped";
 	}
@@ -154,7 +154,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('left-red').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Left Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Left Light Bumper  ','');
 		document.getElementById('lightBumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
 	}
@@ -167,7 +167,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('right-red').style.display = "none";
-		document.getElementById('currBump').innerHTML.replace('Right Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Light Bumper  ','');
 		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
 	}
