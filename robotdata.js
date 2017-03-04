@@ -34,6 +34,7 @@ function analyze_data(message){
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
 	if(cliffFrontLeft || cliffFrontLeft || cliffLeft || cliffRight) {
 		document.getElementById('all-cliff-sensors').style = "background-color: red";
+		socket.send(JSON.stringify({'opcode':'stop'})); 
 	}
 	else {
 		document.getElementById('all-cliff-sensors').style = "background-color: green";
