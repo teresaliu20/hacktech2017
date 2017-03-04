@@ -210,6 +210,7 @@ function analyze_delta_data(message){
 	var delta_distance = message['data']['delta']['distance'];
 	var delta_angle = message['data']['delta']['angle'];
 	totalDistance += delta_distance;
+	document.getElementById('distance').innerHTML = totalDistance;
 	// console.log("angle : " + angle );
 
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
