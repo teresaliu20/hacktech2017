@@ -9,6 +9,7 @@ var input = 1;
 var robot_speed = 400;
 var robot_rot_speed = 150;
 
+var ps_item;
 
 function init() {
   create.debug = false; //Data will be logged to terminal.
@@ -17,6 +18,7 @@ function init() {
     for (var i = ps.length - 1; i >= 0; i--) {
       var name = ps[i]['comName'];
       if(S(name).includes('usbserial')){
+        ps_item = ps[i]['comName'];
         robot = create.open(name, main);
         console.log("connected to "+ name);
         break;
@@ -27,7 +29,7 @@ function init() {
   });
 }
 
-function intervalFunc () {
+function intervalFunc() {
   // console.log(robot.data);
   // process.send(JSON.stringify(robot.data));
   process.send(JSON.stringify({ 'delta': robot.delta}));
@@ -41,12 +43,12 @@ function intervalFunc () {
 
 //Main Program:
 function main(r) {
+  console.log("in main");
       robot_setup = r; 
       robot_setup.write(128);
       robot_setup.write(131);
       console.log("init completed");
       setInterval(intervalFunc, 100);
-      // robot = r;
 }
 
 
@@ -73,6 +75,10 @@ function right(){
 function stop(){
   robot.drive(0, 32767);
 }
+
+
+
+// robot = create.open(ps_item, main);
 
 
 process.on('message', function(m) {
