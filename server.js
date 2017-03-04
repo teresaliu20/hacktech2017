@@ -8,22 +8,20 @@ var chalk = require('chalk');
 var opcode = "";
 
 
-var ls = process.exec('node worker.js '+i, function (error, stdout, stderr) {
-   if (error) {
-     console.log(error.stack);
-     console.log('Error code: '+error.code);
-     console.log('Signal received: '+error.signal);
-   }
-   console.log('stdout: ' + stdout);
-   console.log('stderr: ' + stderr);
+// var ls = process.exec('node worker.js '+i, function (error, stdout, stderr) {
+//    if (error) {
+//      console.log(error.stack);
+//      console.log('Error code: '+error.code);
+//      console.log('Signal received: '+error.signal);
+//    }
+//    console.log('stdout: ' + stdout);
+//    console.log('stderr: ' + stderr);
    
- });
+//  });
 
- ls.on('exit', function (code) {
-   console.log('Child process exited with exit code '+code);
- });
-
-
+//  ls.on('exit', function (code) {
+//    console.log('Child process exited with exit code '+code);
+//  });
 
 
 // Server-side communication with Client-side
@@ -52,7 +50,7 @@ io.sockets.on("connection",function(socket){
 
         /*Printing the data */
         var ack_to_client = {
-        data:"LMAO"
+        data:"Server Received the message"
       }
 
       if (data["opcode"] == "start") {
