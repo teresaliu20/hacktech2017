@@ -122,7 +122,7 @@ function analyze_data(message){
 		document.getElementById('lightBumpFrontRight').innerHTML = "Light Front Right Side - not bumped";
 	}
 	lightBumpLeft = message["data"]["data"]["lightBumpLeft"];
-	if(leftBumpLeft) {
+	if(lightBumpLeft) {
 		document.getElementById('lightBumpLeft').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side bumped"
 	}
@@ -131,7 +131,7 @@ function analyze_data(message){
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
 	}
 	lightBumpRight = message["data"]["data"]["lightBumpRight"];
-	if(leftBumpRight) {
+	if(lightBumpRight) {
 		document.getElementById('lightBumpRight').style = "background-color: " + hitColor;
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side bumped"
 	}
