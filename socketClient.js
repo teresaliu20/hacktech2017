@@ -51,3 +51,13 @@ $(function(){
         socket.send(JSON.stringify(data)); 
     });
 });
+
+// Stop
+$(function(){
+    $('#off-button').click(function(){
+        var data = {
+            opcode:'stop'              
+        }
+        socket.send(JSON.stringify(data)); 
+    });
+});
