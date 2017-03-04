@@ -26,7 +26,7 @@ function init() {
 // robot = create.open(port, callback=null)
 
 function intervalFunc () {
-  console.log(robot.data);
+  // console.log(robot.data);
 }
 
 

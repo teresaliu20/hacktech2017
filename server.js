@@ -37,7 +37,7 @@ io.sockets.on("connection",function(socket){
 
       process.send({ "opcode": data["opcode"] });
 
-      socket.send(JSON.stringify(ack_to_client));
+      // socket.send(JSON.stringify(ack_to_client));
         /*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
     });
 

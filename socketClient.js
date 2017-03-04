@@ -6,13 +6,15 @@ socket.on("message",function(message){
         using socket.on("message") , one cna listen for the ,message event and associate a callback to 
         be executed . The Callback function gets the dat sent from the server 
     */
-    console.log("Message from the server arrived")
+    // console.log("Message from the server arrived");
     message = JSON.parse(message);
     if (message['data'] == "Connection with the server established") {
-        console.log(message); /*converting the data into JS object */
+        // console.log(message); /*converting the data into JS object */
         $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
     }else{
+
         analyzeData(message);
+        newAngle();
     };
 });
 
