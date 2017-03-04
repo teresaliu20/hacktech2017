@@ -23,15 +23,15 @@ socket.on("message",function(message){
     };
 });
 
-// Autonomous On
-$(function(){
-    $('#on-button').click(function(){
-        var data = {
-            opcode:'auto'              
-        }
-        socket.send(JSON.stringify(data)); 
-    });
-});
+// // Autonomous On
+// $(function(){
+//     $('#on-button').click(function(){
+//         var data = {
+//             opcode:'auto'              
+//         }
+//         socket.send(JSON.stringify(data)); 
+//     });
+// });
 
 // Forward
 $(function(){
