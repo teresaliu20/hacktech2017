@@ -23,7 +23,7 @@ var ls = process.exec('node worker.js '+i, function (error, stdout, stderr) {
    console.log('Child process exited with exit code '+code);
  });
 
- 
+
 
 
 // Server-side communication with Client-side
@@ -52,7 +52,7 @@ io.sockets.on("connection",function(socket){
 
         /*Printing the data */
         var ack_to_client = {
-        data:"Server Received the message"
+        data:"LMAO"
       }
 
       if (data["opcode"] == "start") {
