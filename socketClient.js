@@ -23,7 +23,7 @@ socket.on("message",function(message){
     };
 });
 
-// // Autonomous On
+// Autonomous On
 // $(function(){
 //     $('#on-button').click(function(){
 //         var data = {

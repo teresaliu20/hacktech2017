@@ -215,7 +215,7 @@ function analyze_delta_data(message){
 	// console.log("angle : " + angle );
 
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
-		console.log("angle : " + angle );
+		// console.log("angle : " + angle );
 		angle +=  1.263 *delta_angle;
 		x += delta_distance * Math.cos(angle * (Math.PI / 180));
 		y += delta_distance * Math.sin(angle * (Math.PI / 180));
