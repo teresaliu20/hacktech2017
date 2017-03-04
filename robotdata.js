@@ -154,7 +154,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('left-red').style.display = "none";
-		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Left Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Default Left Light Bumper  ','');
 		document.getElementById('lightBumpLeft').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpLeft').innerHTML = "Light Left Side - not bumped";
 	}
@@ -167,7 +167,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('right-red').style.display = "none";
-		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Right Light Bumper  ','');
+		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Default Right Light Bumper  ','');
 		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
 	}
