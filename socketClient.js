@@ -12,20 +12,16 @@ socket.on("message",function(message){
     $('#content').append('<div >'+message.data+'</div>'); /*appending the data on the page using Jquery */
 });
 $(function(){
-    $('#submit').click(function(){ /*listening to the button click using Jquery listener*/
-        var data = { /*creating a Js ojbect to be sent to the server*/ 
-            message:$('#message').val(), /*getting the text input data      */
-            author:'karthic'                
+    $('#on-button').click(function(){ /*listening to the button click using Jquery listener*/
+        var data = { /*creating a Js object to be sent to the server*/ 
+            opcode:'start'              
         }
         socket.send(JSON.stringify(data)); 
         /*Data can be sent to server very easily by using socket.send() method 
         The data has to be changed to a JSON before sending
                               it (JSON.stringify() does this job )*/
         /* This triggers a message event on the server side 
-        and the event handler obtains the data sent */ 
-
-        $('#message').val('');
-        //Emptying the text box value using jquery 
+        and the event handler obtains the data sent */
 
     });
 });
