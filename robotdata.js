@@ -47,6 +47,7 @@ function analyze_data(message){
 	wall = message["data"]["data"]["wall"];
 	encoderLeft = message["data"]["data"]["encoderLeft"];
 	encoderRight = message["data"]["data"]["encoderRight"];
+	document.getElementById('encoder-counts').innerHTML = encoderLeft + ", " + encoderRight;
 }
 
 
