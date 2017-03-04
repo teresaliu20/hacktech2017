@@ -13,40 +13,42 @@ var server = http.createServer(app).listen(8000);
 io = io.listen(server); 
 /*initializing the websockets communication , server instance has to be sent as the argument */
  
+
+// Sending message to client
 io.sockets.on("connection",function(socket){
     /*Associating the callback function to be executed when client visits the page and 
       websocket connection is made */
-      
-    var message_to_client = {
-      data:"Connection with the server established"
-    }
 
-    socket.send(JSON.stringify(message_to_client)); 
-    /*sending data to the client , this triggers a message event at the client side */
-    
+      // message from app.js
+      process.on('message', function(m) {
+        var data = JSON.parse(m);
+        var message_to_client = {
+          'data': data
+        }
+        /*sending data to the client , this triggers a message event at the client side */
+        socket.send(JSON.stringify(message_to_client)); 
+      });
+
     // console.log('server.js: Socket.io Connection with the client established');
     
     socket.on("message",function(data){
       /*This event is triggered at the server side when client sends the data using socket.send() method */
       data = JSON.parse(data);
+      // Sending to app.js
+      process.send({ "opcode": data["opcode"] });
 
       /*Printing the data */
       var ack_to_client = {
         data:"Server Received the message"
       }
 
-      process.send({ "opcode": data["opcode"] });
-
-      // socket.send(JSON.stringify(ack_to_client));
-        /*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
+      /*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
+      socket.send(JSON.stringify(ack_to_client));
     });
 
 });
 
 
-process.on('message', function(m) {
-  // console.log('CHILD:server.js got message:', m);
-});
 
 
 

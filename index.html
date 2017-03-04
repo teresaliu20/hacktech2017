@@ -7,7 +7,9 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
         <script src="jquery-circle-progress/dist/circle-progress.js"></script>
          <link rel="stylesheet" type="text/css" href="style.css">
-
+         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+         <script type="text/javascript" src="socketClient.js"></script>
+         <script type="text/javascript" src="robotdata.js"></script>
     </head>
     <body>
         
@@ -29,12 +31,31 @@
     
         </div>
 
-        <div class="attributes">
+        <div id="myDiv" style="width: 480px; height: 400px;"> </div>
+
+    <script type="text/javascript">
+    setInterval(function(){        
+        var layout = {
+          xaxis: {
+            range: [ -300, 300 ]
+          },
+          yaxis: {
+            range: [-300, 300]
+          },
+          title:'Map'
+        }; 
+        Plotly.newPlot('myDiv', data, layout);
+    }, 600);
+
+
+    </script>
+
+        <!-- <div class="attributes">
             <h2> Attributes </h2> 
             <h3> Distance: </h3> <span id="distance"></span>
-<!--             <h3> Angle: </h3> <span id="angle"></span> -->
-<!--             <h3> Cliff Sensors: </h3> <span id="distance"></span>
-            <h3> Bump Sensors: </h3> <span id="distance"></span> -->
+            <h3> Angle: </h3> <span id="angle"></span>
+            <h3> Cliff Sensors: </h3> <span id="distance"></span>
+            <h3> Bump Sensors: </h3> <span id="distance"></span>
             <div id="angle"></div>
             <h3> Wall: </h3> <span id="wall"> </span>
             <h3> Left Encoder Counts: <span id="leftEncoder"> 0</span></h3>
@@ -42,10 +63,8 @@
 
 
         </div>
+ -->
 
-
-    <script type="text/javascript" src="socketClient.js"></script>
-    <script type="text/javascript" src="robotdata.js"></script>
 
     </body>
 </html>

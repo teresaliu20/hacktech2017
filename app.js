@@ -22,6 +22,7 @@ var robot_process = child_process.fork("robot.js", "");
 
 robot_process.on('message', function(m) {
   // console.log('PARENT got message:', m);
+  server_process.send(m);
 });
 
 // robot.js sends message to app.js

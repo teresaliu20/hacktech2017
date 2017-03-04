@@ -6,6 +6,8 @@ var robot;
 var robot_setup;
 var input = 1;
 
+var robot_speed = 400;
+
 function init() {
 	create.debug = false; //Data will be logged to terminal.
 	create.inputMode = 1; //Only relevant when debug is on.
@@ -27,6 +29,9 @@ function init() {
 
 function intervalFunc () {
   // console.log(robot.data);
+  // process.send(JSON.stringify(robot.data));
+  // console.log(robot.delta);
+  process.send(JSON.stringify(robot.delta));
 }
 
 
@@ -37,27 +42,27 @@ function main(r) {
       robot_setup.write(128);
       robot_setup.write(131);
       console.log("init completed");
-      // setInterval(intervalFunc, 1000);
+      setInterval(intervalFunc, 500);
 }
 
 function forward(){
 	stop();
 	// console.log("forward() triggered");
-	robot.drive(20, 32767);
+	robot.drive(robot_speed, 32767);
 }
 
 function backward(){
 	stop();
-	robot.drive(-20, 32767);
+	robot.drive(-robot_speed, 32767);
 }
 
 function left(){
 	stop();
-	robot.drive(20,1);
+	robot.drive(robot_speed-100,1);
 }
 function right(){
 	stop();
-	robot.drive(20, -1);
+	robot.drive(robot_speed-100, -1);
 }
 function stop(){
 	robot.drive(0, 32767);
