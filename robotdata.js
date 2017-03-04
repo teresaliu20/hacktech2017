@@ -140,8 +140,32 @@ function analyze_data(message){
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
 	}
 	dropLeft = message["data"]["data"]["dropLeft"];
+	if(dropLeft) {
+		document.getElementById('dropLeft').style = "background-color: " + hitColor;
+		document.getElementById('dropLeft').innerHTML = "Left Wheel - dropped"
+	}
+	else {
+		document.getElementById('dropLeft').style = "background-color: #69A7A9";
+		document.getElementById('dropLeft').innerHTML = "Left Wheel - not dropped";
+	}
 	dropRight = message["data"]["data"]["dropRight"];
+	if(dropRight) {
+		document.getElementById('dropRight').style = "background-color: " + hitColor;
+		document.getElementById('dropRight').innerHTML = "Right Wheel - dropped"
+	}
+	else {
+		document.getElementById('dropRight').style = "background-color: #69A7A9";
+		document.getElementById('dropRight').innerHTML = "Right Wheel - not dropped";
+	}
 	wall = message["data"]["data"]["wall"];
+	if(wall) {
+		document.getElementById('wall').style = "background-color: " + hitColor;
+		document.getElementById('wall').innerHTML = "Wall - found"
+	}
+	else {
+		document.getElementById('wall').style = "background-color: #69A7A9";
+		document.getElementById('wall').innerHTML = "Wall - not found";
+	}
 	encoderLeft = message["data"]["data"]["encoderLeft"];
 	encoderRight = message["data"]["data"]["encoderRight"];
 	document.getElementById('encoder-counts').innerHTML = "Left Encoder Count: " + encoderLeft + '\n' + 
