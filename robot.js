@@ -7,6 +7,7 @@ var robot_setup;
 var input = 1;
 
 var robot_speed = 400;
+var robot_rot_speed = 150;
 
 function init() {
 	create.debug = false; //Data will be logged to terminal.
@@ -30,8 +31,8 @@ function init() {
 function intervalFunc () {
   // console.log(robot.data);
   // process.send(JSON.stringify(robot.data));
-  // console.log(robot.delta);
-  process.send(JSON.stringify(robot.delta));
+  process.send(JSON.stringify({ 'delta': robot.delta}));
+  process.send(JSON.stringify({ 'data' : robot.data}));
 }
 
 
@@ -58,11 +59,11 @@ function backward(){
 
 function left(){
 	stop();
-	robot.drive(robot_speed-100,1);
+	robot.drive(robot_rot_speed,1);
 }
 function right(){
 	stop();
-	robot.drive(robot_speed-100, -1);
+	robot.drive(robot_rot_speed, -1);
 }
 function stop(){
 	robot.drive(0, 32767);

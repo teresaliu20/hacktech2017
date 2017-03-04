@@ -1,4 +1,4 @@
-var angle = 90;
+var angle = 0;
 var x = 0;
 var y = 0;
 var x_arr = [];
@@ -20,16 +20,20 @@ function newAngle(){
 // 	}
 }
 
-function analyzeData(message){
+function analyze_data(message){
+	console.log("in analyze_data");
+}
 
-	// console.log(message);
+
+function analyze_delta_data(message){
+	console.log(message['data']['delta']);
 	// console.log("Encoder left: " + message["data"]['encoderLeft']);
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
 	var delta_distance = message['data']['distance'];
 	var delta_angle = message['data']['angle'];
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
-		console.log("angle : " + angle );
-		angle +=  delta_angle;
+		// console.log("angle : " + angle );
+		angle +=  6.25* delta_angle;
 		x += delta_distance * Math.cos(angle * (Math.PI / 180));
 		y += delta_distance * Math.sin(angle * (Math.PI / 180));
 		// console.log("x: " + x + " y: " + y);
