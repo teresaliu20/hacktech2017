@@ -78,7 +78,7 @@ function stop(){
 
 
 
-// robot = create.open(ps_item, main);
+robot = create.open(ps_item, autonomous);
 
 
 process.on('message', function(m) {
@@ -101,50 +101,6 @@ process.on('message', function(m) {
   	stop();
   }
 
-  // else if (m['opcode'] == 'auto'){
-  //   // autonomous();
-  // }
-
 });
 
 init();
-
-
-// function autonomous(){
-//   console.log("AUTO MODE");
-//   // create.ports(function(ports){
-//   //   for (var i = ps.length - 1; i >= 0; i--) {
-//   //     var name = ps[i]['comName'];
-//   //     if(S(name).includes('usbserial')){
-//   //       robot = create.open(name,main);
-
-//   //       console.log("connected to "+ name);
-//   //       break;
-//   //     }else if(i == ps.length -1){
-//   //       console.log("no device found");
-//   //     }
-//   //   };
-//   // });
-//   forward();
-//   //React to left bumper sensor using robot.on:
-//   robot_setup.on.bumpLeft = function(value) {
-//     if(value == true) {
-//       //BumpLeft just changed, and the new value is true!
-//       backward();
-//       setTimeout(right(), 500);
-//       setTimeout(forward(), 1000);
-//     }
-//   };
-
-//   //React to right bumper sensor using robot.on:
-//   robot_setup.on.bumpRight = function(value) {
-//     if(value == true) {
-//       //BumpRight just changed, and the new value is true!
-//       backward();
-//       setTimeout(left(), 500);
-//       setTimeout(forward(), 1000);
-//     }
-//   };
-// }
-
-// console.log(robot);
