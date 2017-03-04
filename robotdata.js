@@ -209,7 +209,7 @@ function analyze_delta_data(message){
 	// console.log("Encoder right: " + message["data"]['encoderRight']);
 	var delta_distance = message['data']['delta']['distance'];
 	var delta_angle = message['data']['delta']['angle'];
-	totalDistance += delta_distance;
+	totalDistance += abs(delta_distance);
 	document.getElementById('distance').innerHTML = totalDistance;
 	// console.log("angle : " + angle );
 
