@@ -50,7 +50,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('cliffFrontLeft').style = "background-color: #69A7A9";
-		document.getElementById('cliffFrontLeft').innerHTML = "";
+		document.getElementById('cliffFrontLeft').innerHTML = "0";
 	}
 	cliffFrontRight = message["data"]["data"]["cliffFrontRight"];
 	if(cliffFrontRight) {
@@ -59,7 +59,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('cliffFrontRight').style = "background-color: #69A7A9";
-		document.getElementById('cliffFrontRight').innerHTML = "";
+		document.getElementById('cliffFrontRight').innerHTML = "0";
 	}
 	cliffLeft = message["data"]["data"]["cliffLeft"];
 	if(cliffLeft) {
@@ -68,7 +68,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('cliffLeft').style = "background-color: #69A7A9";
-		document.getElementById('cliffLeft').innerHTML = "";
+		document.getElementById('cliffLeft').innerHTML = "0";
 	}
 	cliffRight = message["data"]["data"]["cliffRight"];
 	if(cliffRight) {
@@ -77,7 +77,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('cliffRight').style = "background-color: #69A7A9";
-		document.getElementById('cliffRight').innerHTML = "";
+		document.getElementById('cliffRight').innerHTML = "0";
 	}
 	lightBumpCenterLeft = message["data"]["data"]["lightBumpCenterLeft"];
 	if(lightBumpCenterLeft) {
@@ -188,7 +188,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('dropLeft').style = "background-color: #69A7A9";
-		document.getElementById('dropLeft').innerHTML = "";
+		document.getElementById('dropLeft').innerHTML = "UP";
 	}
 	dropRight = message["data"]["data"]["dropRight"];
 	if(dropRight) {
@@ -197,7 +197,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('dropRight').style = "background-color: #69A7A9";
-		document.getElementById('dropRight').innerHTML = "";
+		document.getElementById('dropRight').innerHTML = "UP";
 	}
 	wall = message["data"]["data"]["wall"];
 	if(wall) {
@@ -206,7 +206,7 @@ function analyze_data(message){
 	}
 	else {
 		document.getElementById('wall').style = "background-color: #69A7A9";
-		document.getElementById('wall').innerHTML = "";
+		document.getElementById('wall').innerHTML = "0";
 	}
 	encoderLeft = message["data"]["data"]["encoderLeft"];
 	encoderRight = message["data"]["data"]["encoderRight"];
