@@ -16,13 +16,28 @@ var hitColor = "red";
 
 
 function newAngle(){
-	  $('#angle').circleProgress({
-	    value: ((Math.abs(angle-90)%360)/360),
-	    size: 80,
-	    fill: {
-	      gradient: ["red", "orange"]
-	    }
-	  });
+	if (angle-90 > 0) {
+		$('#angle').circleProgress({
+		  value: ( (Math.abs(angle-90)%360)/360 -1),
+		  size: 80,
+		  fill: {
+		    gradient: ["red", "orange"]
+		  },
+		  animation:false,
+		  startAngle: Math.PI*3/2,
+		});
+	}else{
+		$('#angle').circleProgress({
+		  value: ( 1- (Math.abs(angle-90)%360)/360),
+		  size: 80,
+		  fill: {
+		    gradient: ["red", "orange"]
+		  },
+		  animation:false,
+		  reverse:true,
+		  startAngle: Math.PI*3/2,
+		});
+	}
 
 }
 
@@ -208,7 +223,7 @@ function analyze_delta_data(message){
 	var delta_angle = message['data']['delta']['angle'];
 	totalDistance += Math.abs(delta_distance);
 	document.getElementById('distance').innerHTML = totalDistance;
-	document.getElementById('angle').innerHTML = angle;
+	// document.getElementById('angle').innerHTML = angle;
 	// console.log("angle : " + angle );
 
 	if (!((typeof delta_angle === "undefined" ) || (typeof delta_distance === "undefined")) ) {
