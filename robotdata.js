@@ -156,8 +156,8 @@ function analyze_data(message){
 		document.getElementById('currBump').innerHTML = document.getElementById('currBump').innerHTML.replace('Default Right Light Bumper  ','');
 		document.getElementById('lightBumpRight').style = "background-color: #69A7A9";
 		document.getElementById('lightBumpRight').innerHTML = "Light Right Side - not bumped";
-	}
-	bumpLeft = message["data"]["data"]["bumpLeft"];
+	
+}	bumpLeft = message["data"]["data"]["bumpLeft"];
 	if(bumpLeft) {
 		document.getElementById('left-red').style = "opacity: 1";
 		document.getElementById('currBump').innerHTML += "Left Bumper  ";
