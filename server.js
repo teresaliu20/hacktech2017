@@ -8,8 +8,8 @@ var chalk = require('chalk');
 // Server-side communication with Client-side
 var app = express();
 app.use(express.static('./'));
-//Specifying the public folder of the server to make the html accesible using the static middleware
- 
+//Specifying the folder of the server to make the html accesible using the static middleware
+
 var server =http.createServer(app).listen(8000);
 //Server listens on the port 8000
 io = io.listen(server); 
@@ -28,12 +28,15 @@ io.sockets.on("connection",function(socket){
     socket.on("message",function(data){
         /*This event is triggered at the server side when client sends the data using socket.send() method */
         data = JSON.parse(data);
- 
-        console.log(data);
+
         /*Printing the data */
         var ack_to_client = {
         data:"Server Received the message"
       }
+
+      data
+
+
       socket.send(JSON.stringify(ack_to_client));
         /*Sending the Acknowledgement back to the client , this will trigger "message" event on the clients side*/
     });
