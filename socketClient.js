@@ -24,43 +24,6 @@ socket.on("message",function(message){
 });
 
 
-document.onkeydown = checkKey;
-
-function checkKey(e) {
-
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
-        // up arrow
-        var data = {
-            opcode:'forward'              
-        }
-        socket.send(JSON.stringify(data)); 
-    }
-    else if (e.keyCode == '40') {
-        // down arrow
-        var data = {
-            opcode:'backward'              
-        }
-        socket.send(JSON.stringify(data)); 
-    }
-    else if (e.keyCode == '37') {
-       // left arrow
-       var data = {
-           opcode:'left'              
-       }
-       socket.send(JSON.stringify(data)); 
-    }
-    else if (e.keyCode == '39') {
-       // right arrow
-       var data = {
-           opcode:'right'              
-       }
-       socket.send(JSON.stringify(data)); 
-    }
-
-}
-
 // Forward
 $(function(){
     $('#forward-button').click(function(){
