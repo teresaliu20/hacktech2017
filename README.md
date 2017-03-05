@@ -1,5 +1,5 @@
-### iRoamba
-### A web dashboard for the iRobot Create 2 Roomba.
+# iRoamba
+## A web dashboard for the iRobot Create 2 Roomba.
 
 ## What it does
 
