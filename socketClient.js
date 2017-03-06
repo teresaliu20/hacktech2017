@@ -23,7 +23,56 @@ socket.on("message",function(message){
     };
 });
 
+window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
 
+  switch (event.key) {
+    case "ArrowDown":
+      // code for "down arrow" key press.
+      var data = {
+          opcode:'backward'              
+      }
+      socket.send(JSON.stringify(data)); 
+      break;
+    case "ArrowUp":
+      // code for "up arrow" key press.
+      var data = {
+          opcode:'forward'              
+      }
+      socket.send(JSON.stringify(data)); 
+      break;
+    case "ArrowLeft":
+      // code for "left arrow" key press.
+      var data = {
+          opcode:'left'              
+      }
+      socket.send(JSON.stringify(data)); 
+      break;
+    case "ArrowRight":
+      // code for "right arrow" key press.
+      var data = {
+          opcode:'right'              
+      }
+      socket.send(JSON.stringify(data)); 
+      break;
+    default:
+      return; // Quit when this doesn't handle the key event.
+  }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+window.addEventListener("keyup", function (event) {
+  var data = {
+      opcode:'stop'              
+  }
+  socket.send(JSON.stringify(data)); 
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
 // Forward
 $(function(){
     $('#forward-button').click(function(){

@@ -6,8 +6,8 @@ var robot;
 var robot_setup;
 var input = 1;
 
-var robot_speed = 400;
-var robot_rot_speed = 150;
+var robot_speed = 100;
+var robot_rot_speed = 100;
 
 var ps_item;
 
@@ -48,7 +48,7 @@ function intervalFunc() {
 function main(r) {
   robot_setup = r; 
   robot_setup.write(128);
-  robot_setup.write(131);
+  robot_setup.write(132);
   console.log("init completed");
   setInterval(intervalFunc, 100);
 }
