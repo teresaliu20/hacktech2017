@@ -1,5 +1,6 @@
 # iRoamba
 ## A web dashboard for the iRobot Create 2 Roomba.
+## Created by Nishir Shelat, Teresa Liu, Daniel Koo, and Ethan Yu
 
 ## What it does
 
