@@ -1,6 +1,12 @@
 # iRoamba
-## A web dashboard for the iRobot Create 2 Roomba.
-## Created by Nishir Shelat, Teresa Liu, Daniel Koo, and Ethan Yu
+#### A web dashboard for the iRobot Create 2 Roomba.
+Created during HackTech 2017 at California Institute of Technology.
+
+## Our Team
+- Nishir Shelat
+- Teresa Liu
+- Daniel Koo
+- Ethan Yu
 
 ## What it does
 
