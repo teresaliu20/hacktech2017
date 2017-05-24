@@ -1,7 +1,7 @@
 # iRoamba
 #### A web dashboard for the iRobot Create 2 Roomba.
 Created during HackTech 2017 at California Institute of Technology as a submission to iRobot's Roomba Challenge.  
-**Read more about iRoamba on our [Devpost](https://devpost.com/software/iroamba)
+**Read more about iRoamba on our [Devpost](https://devpost.com/software/iroamba)**
 
 ## Our Team
 - Nishir Shelat
